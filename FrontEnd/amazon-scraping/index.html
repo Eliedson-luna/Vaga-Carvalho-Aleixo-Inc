@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./src/style.css" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amazon Scraping</title>
+  <title>Scrapper</title>
 </head>
 
 <body>
@@ -16,13 +19,16 @@
   <main>
     <section id="search-section">
       <form id="search-form">
-        <input name="search-params" type="text" placeholder="What are you looking for today?" class="form-input" />
+
+        <input id="search-input" name="keyword" type="text" placeholder="What are you looking for today?"
+          class="form-input" />
+
+        <button type="submit" class="fa fa-search" />
+
       </form>
-      <button type="submit" />
     </section>
   </main>
 
-  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
