@@ -1,3 +1,18 @@
 {
-    "PORT": 3000
+    "SERVER": {
+        "PORT": 3000
+    },
+    "CORS": {
+        "ORIGINS": [
+            "http://localhost:5173"
+        ],
+        "METHODS": [
+            "GET",
+            "POST"
+        ],
+        "HEADERS": [
+            "Content-Type",
+            "Authorization"
+        ]
+    }
 }

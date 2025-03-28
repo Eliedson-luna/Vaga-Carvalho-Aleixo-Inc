@@ -8,12 +8,12 @@ export const searchParam = async (req: any, res: any) => {
         if (!keyword || typeof keyword !== "string") {
             return res.status(400).json({ error: "Parameter 'keyword' is required" });
         }
-
+        console.log(`looking for ${keyword}`)
         const response = await axios.get(`https://www.amazon.com/s?k=${encodeURIComponent(keyword)}`);
 
-        const productsDom = scrapProducts(response);
+        const scrapedProducts = scrapProducts(response);
 
-        return res.status(200).json(productsDom);
+        return res.status(200).json(scrapedProducts);
 
     } catch (err: unknown) {
         if (err instanceof Error) {

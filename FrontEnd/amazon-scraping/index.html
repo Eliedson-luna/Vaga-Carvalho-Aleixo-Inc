@@ -9,6 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scrapper</title>
+  <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
@@ -20,15 +21,19 @@
     <section id="search-section">
       <form id="search-form">
 
-        <input id="search-input" name="keyword" type="text" placeholder="What are you looking for today?"
+        <input id="search-input" name="keyword" type="text" required placeholder="What are you looking for today?"
           class="form-input" />
 
         <button type="submit" class="fa fa-search" />
 
       </form>
     </section>
-  </main>
+    <section id="result-section">
+      <ul id="results">
 
+      </ul>
+    </section>
+  </main>
 </body>
 
 </html>
