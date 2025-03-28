@@ -11,7 +11,7 @@ export async function fetchData(keyword) {
 
         if (!response.ok) throw new Error("Erro na requisição");
 
-        const data = response;
+        const data = await response.json();
         return data
     } catch (error) {
         console.error("Erro:", error.message);
