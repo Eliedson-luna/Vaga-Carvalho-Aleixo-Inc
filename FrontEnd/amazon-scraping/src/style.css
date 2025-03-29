@@ -1,7 +1,13 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --color: #213547;
+    --titleColor: #121e28;
     --background: #e0dede;
+    --containerackground: #fff;
     --borderColor: #262740;
     --linkColor: #646cff;
     --linkHover: #535bf2;
@@ -11,12 +17,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: #c3c5c7;
+    --color: #213547;
+    --titleColor: #989a9c;
     --background: #242424;
+    --containerackground: #ffffff;
     --borderColor: #ff814b;
     --linkColor: #9bf9f6;
     --linkHover: #c0f6f4;
-    --shadow: #2d0d00;
+    --shadow: #000000;
   }
 }
 
@@ -45,22 +53,31 @@ a:hover {
 }
 
 body {
+  box-sizing: border-box;
   margin: 0;
   display: flex;
-  min-width: 320px;
+  flex-direction: column;
+  min-width: 90vw;
+  max-width: 100vw;
   min-height: 100vh;
   place-items: center;
   background-color: var(--background);
 }
 
 header {
+  gap: 30px;
+  box-shadow: 0px 0.5px 15px black;
+  margin-bottom: 10px;
   height: 100vh;
-  margin: 0 50px 0 20px;
+  width: 100vw;
+  padding-left: 50px;
   display: flex;
   place-items: center;
+  transition: height 1s;
 }
 
 h1 {
+  color: var(--titleColor);
   margin: 0 0 10px 0;
   font-size: 3.2em;
   line-height: 1.1;
@@ -82,21 +99,16 @@ h1 {
 #search-input {
   border: 1px solid transparent;
   border-radius: 5px;
-  height: 2rem;
+  height: 2.2rem;
   width: 30rem;
-  background-color: var(--color);
-  color: var(--background);
+  background-color: var(--containerackground);
+  color: var(--titleColor);
   transition: border-color 0.25s;
 }
 
 #search-input:hover {
   border-color: var(--borderColor);
   filter: drop-shadow(0px 0px 2px var(--shadow));
-}
-
-#search-input:focus,
-#search-input:focus-visible {
-  outline: solid 1px #f8b46f;
 }
 
 button {
@@ -113,7 +125,73 @@ button:hover {
   filter: drop-shadow(0px 0px 2px var(--shadow));
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+main {
+  display: grid;
+  justify-items: center;
+  max-height: 90vh;
+  width: 100vw;
+  scroll-behavior: smooth;
+  overflow: scroll;
+}
+
+#productList {
+  max-width: 90vw;
+  list-style: none;
+  padding: 0 10px;
+}
+
+.product {
+  padding: 10px;
+  margin: 15px 0;
+  background-color: var(--containerackground);
+  border-radius: 3px;
+  filter: drop-shadow(0px 0px 5px var(--shadow));
+}
+
+.product-img-box {
+  display: grid;
+  place-items: center;
+}
+
+.product-img-box img {
+  width: 15vh;
+}
+
+.product-box {
+  display: flex;
+  max-width: 70vw;
+}
+
+.product-info-box {
+  padding: 0 10px;
+  max-width: 70%;
+}
+
+.product-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+footer {
+  text-align: center;
+  justify-content: center;
+  width: 100vw;
+  place-content: center;
+  max-height: 1vh;
+}
+
+.fa-search {
+  place-content: center;
+}
+
+#searchIcon,
+#loader {
+  width: 20px;
+  height: 20px;
+}
+
+#loader {
+  place-content: center;
 }

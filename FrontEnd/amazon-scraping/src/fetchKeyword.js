@@ -1,5 +1,5 @@
 export async function fetchData(keyword) {
-    const url = `http://localhost:3000/api/scrape/?keyword=${encodeURIComponent(keyword)}`;
+    const url = `http://10.0.0.199:3000/api/scrape/?keyword=${encodeURIComponent(keyword)}`;
 
     try {
         const response = await fetch(url, {

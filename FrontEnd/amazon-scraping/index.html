@@ -15,25 +15,38 @@
 <body>
   <header>
     <h1><span>Search on Amazon</span></h1>
-  </header>
-
-  <main>
     <section id="search-section">
       <form id="search-form">
 
         <input id="search-input" name="keyword" type="text" required placeholder="What are you looking for today?"
           class="form-input" />
 
-        <button type="submit" class="fa fa-search" />
+        <button type="submit">
+
+          <i id="searchIcon" class="fa fa-search" style="display:inherit;"></i>
+
+          <img id="loader" src="./src/assets/loading.svg" alt="Loading..." style="display: none;">
+
+        </button>
 
       </form>
+
     </section>
+
+  </header>
+  <main>
     <section id="result-section">
-      <ul id="results">
+      <button style="display: none;" onclick="ordenarLista()">Ordenar <i id="ordenacaoIcone"
+          class="fa fa-sort"></i></button>
+      <ul id="productList">
 
       </ul>
     </section>
   </main>
+  <footer>
+
+    Made By Eliedson Luna
+  </footer>
 </body>
 
 </html>
