@@ -17,6 +17,7 @@ document.getElementById("search-form").addEventListener("submit", async function
     switchIconDisplay();
     try {
         const keyword = document.getElementById('search-input').value.trim();
+
         const products = await fetchData(keyword);
 
         const producList = document.getElementById('productList');
@@ -55,25 +56,3 @@ document.getElementById("search-form").addEventListener("submit", async function
         switchIconDisplay()
     }
 })
-
-function ordenarLista() {
-    const lista = document.getElementById("lista");
-    const itens = Array.from(lista.children);
-    const icone = document.getElementById("ordenacaoIcone");
-
-    // Ordena com base na direção
-    itens.sort((a, b) => {
-        const valorA = parseInt(a.getAttribute("data-valor"));
-        const valorB = parseInt(b.getAttribute("data-valor"));
-        return ordemCrescente ? valorA - valorB : valorB - valorA;
-    });
-
-    // Reanexando os elementos na nova ordem
-    itens.forEach(item => lista.appendChild(item));
-
-    // Alterna a ordem para a próxima execução
-    ordemCrescente = !ordemCrescente;
-
-    // Atualiza o ícone
-    icone.className = ordemCrescente ? "fa fa-sort-amount-up" : "fa fa-sort-amount-down";
-}

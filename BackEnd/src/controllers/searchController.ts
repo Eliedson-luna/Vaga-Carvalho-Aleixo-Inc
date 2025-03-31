@@ -9,7 +9,7 @@ export const searchParam = async (req: any, res: any) => {
             return res.status(400).json({ error: "Parameter 'keyword' is required" });
         }
         console.log(`looking for ${keyword}`)
-        const response = await axios.get(`https://www.amazon.com/s?k=${encodeURIComponent(keyword)}`);
+        const response = await axios.get(`https://www.amazon.com.br/s?k=${encodeURIComponent(keyword)}`);
 
         const scrapedProducts = scrapProducts(response);
 
@@ -17,7 +17,7 @@ export const searchParam = async (req: any, res: any) => {
 
     } catch (err: unknown) {
         if (err instanceof Error) {
-            res.send(`An error occurred\n${err.message}`).status(500)
+            res.send(`An error occurred: ${err.message}`).status(500)
         } else {
             res.send(`An unknown error occurred`).status(500)
         }
