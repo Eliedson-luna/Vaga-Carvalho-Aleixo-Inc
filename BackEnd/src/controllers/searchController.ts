@@ -9,7 +9,7 @@ export const searchParam = async (req: any, res: any) => {
             return res.status(400).json({ error: "Parameter 'keyword' is required" });
         }
         console.log(`looking for ${keyword}`)
-        const response = await axios.get(`https://www.amazon.com.br/s?k=${encodeURIComponent(keyword)}`);
+        const response = await axios.get(`https://www.amazon.com/s?k=${encodeURIComponent(keyword)}`);
 
         const scrapedProducts = scrapProducts(response);
 

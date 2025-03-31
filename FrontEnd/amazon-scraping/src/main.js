@@ -16,13 +16,11 @@ document.getElementById("search-form").addEventListener("submit", async function
     event.preventDefault();
     switchIconDisplay();
     try {
-        const keyword = document.getElementById('search-input').value.trim();
-
-        const products = await fetchData(keyword);
-
-        const producList = document.getElementById('productList');
-
+        const productList = document.getElementById('productList');
         productList.innerHTML = "";
+
+        const keyword = document.getElementById('search-input').value.trim();
+        const products = await fetchData(keyword);
 
         products.forEach((product) => {
             const li = document.createElement("li");
@@ -44,11 +42,12 @@ document.getElementById("search-form").addEventListener("submit", async function
                     </div>
             `;
 
-            producList.appendChild(li)
+            productList.appendChild(li)
         })
 
         const header = document.querySelector('header')
         header.style.height = "10vh"
+
 
     } catch (err) {
         console.log(err.message)
@@ -56,3 +55,4 @@ document.getElementById("search-form").addEventListener("submit", async function
         switchIconDisplay()
     }
 })
+

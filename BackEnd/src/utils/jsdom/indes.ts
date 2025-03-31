@@ -10,7 +10,7 @@ export const scrapProducts = (response: AxiosResponse) => {
         const dom = new JSDOM(response.data);
         const document = dom.window.document;
         const products: any[] = [];
-        document.querySelectorAll(".s-result-item").forEach((item) => {
+        document.querySelectorAll(".puis-card-container").forEach((item) => {
 
             const title = item.querySelector("a h2 span")?.textContent || "not found";
             const rating = item.querySelector(".a-icon-alt")?.textContent || "not found";
