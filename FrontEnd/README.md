@@ -3,25 +3,26 @@
 # How to run
 ## **IMPORTANT**: When you host your application, you expose it to others on your network. For secure testing, use the preview method.
 
-### To install dependencies:
-
+### Configuration Steps:
+1. Install dependencies
 ```bash
 bun install
 ```
 
-### to preview the application:
+2. Select how to run (dev, build + preview, host):
 
+>start a localhost development environment
 ```bash
-npm run preview
+npm run dev
 ```
 
-### To host the application:
+>start a network development environment
 
 ```bash
 npm run host
 ```
 
-### You can also build an then preview the project:
+>simulates a production environment
 
 1. 
 ```bash
